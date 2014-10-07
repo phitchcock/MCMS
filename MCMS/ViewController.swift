@@ -75,6 +75,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (segue.identifier == "show") {
             var selectedItem: NSManagedObject = creatures[self.tableView.indexPathForSelectedRow()!.row] as NSManagedObject
             showVC.name = selectedItem.valueForKey("name") as String
+            showVC.existingCreature = selectedItem
         }
     }
 
