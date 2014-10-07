@@ -15,11 +15,13 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var creatureTextField: UITextField!
+    @IBOutlet weak var detailTextField: UITextField!
 
     @IBAction func addCreatureButton(sender: AnyObject) {
         setData()
         getData()
         creatureTextField.text = ""
+        detailTextField.text = ""
     }
 
     override func viewDidLoad() {
@@ -41,7 +43,9 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("dCell", forIndexPath: indexPath) as UITableViewCell
         var data: NSManagedObject = creatures[indexPath.row] as NSManagedObject
         var name = data.valueForKey("name") as String
+        var detail = data.valueForKey("detail") as String
         cell.textLabel?.text = data.valueForKey("name") as? String
+        cell.detailTextLabel?.text = data.valueForKey("detail") as? String
         return cell
 
     }
@@ -66,7 +70,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let entityList = NSEntityDescription.entityForName("MagicalCreature", inManagedObjectContext: context)
         var newCreature = MagicalCreature(entity: entityList!, insertIntoManagedObjectContext: context)
         newCreature.name = creatureTextField.text
-
+        newCreature.detail = detailTextField.text
         var e: NSError?
         context.save(&e)
     }
@@ -89,6 +93,7 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         if (segue.identifier == "show") {
             var selectedItem: NSManagedObject = creatures[self.tableView.indexPathForSelectedRow()!.row] as NSManagedObject
             showVC.name = selectedItem.valueForKey("name") as String
+            showVC.detail = selectedItem.valueForKey("detail") as String
             showVC.existingCreature = selectedItem
         }
     }
