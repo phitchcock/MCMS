@@ -15,6 +15,7 @@
 		D0EB548119E4603D0005DFA9 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0EB547F19E4603D0005DFA9 /* LaunchScreen.xib */; };
 		D0EB548D19E4603D0005DFA9 /* MCMSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB548C19E4603D0005DFA9 /* MCMSTests.swift */; };
 		D0EB549919E461770005DFA9 /* MagicalCreature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB549819E461770005DFA9 /* MagicalCreature.swift */; };
+		D0EB549B19E468B10005DFA9 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB549A19E468B10005DFA9 /* ShowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		D0EB548B19E4603D0005DFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0EB548C19E4603D0005DFA9 /* MCMSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCMSTests.swift; sourceTree = "<group>"; };
 		D0EB549819E461770005DFA9 /* MagicalCreature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicalCreature.swift; sourceTree = "<group>"; };
+		D0EB549A19E468B10005DFA9 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +86,7 @@
 				D0EB547319E4603D0005DFA9 /* AppDelegate.swift */,
 				D0EB547819E4603D0005DFA9 /* ViewController.swift */,
 				D0EB547A19E4603D0005DFA9 /* Main.storyboard */,
+				D0EB549A19E468B10005DFA9 /* ShowViewController.swift */,
 				D0EB547D19E4603D0005DFA9 /* Images.xcassets */,
 				D0EB547F19E4603D0005DFA9 /* LaunchScreen.xib */,
 				D0EB547519E4603D0005DFA9 /* MCMS.xcdatamodeld */,
@@ -218,6 +221,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EB549B19E468B10005DFA9 /* ShowViewController.swift in Sources */,
 				D0EB547919E4603D0005DFA9 /* ViewController.swift in Sources */,
 				D0EB549919E461770005DFA9 /* MagicalCreature.swift in Sources */,
 				D0EB547419E4603D0005DFA9 /* AppDelegate.swift in Sources */,

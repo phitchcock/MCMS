@@ -70,6 +70,14 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         getData()
     }
 
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        var showVC = segue.destinationViewController as ShowViewController
+        if (segue.identifier == "show") {
+            var selectedItem: NSManagedObject = creatures[self.tableView.indexPathForSelectedRow()!.row] as NSManagedObject
+            showVC.name = selectedItem.valueForKey("name") as String
+        }
+    }
+
 
 }
 
