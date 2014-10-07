@@ -46,6 +46,20 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
 
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
+        let context: NSManagedObjectContext = appDelegate.managedObjectContext!
+        if editingStyle == UITableViewCellEditingStyle.Delete {
+            context.deleteObject((self.creatures[indexPath.row] as NSManagedObject))
+            self.creatures.removeAtIndex(indexPath.row)
+            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            var error: NSError? = nil
+            if !context.save(&error) {
+                abort()
+            }
+        }
+    }
+
     func setData() {
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext!

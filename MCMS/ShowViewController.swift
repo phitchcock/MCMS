@@ -30,11 +30,21 @@ class ShowViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.navigationItem.rightBarButtonItem = self.editButtonItem()
         creatureNameLabel.text = name
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+
+    override func setEditing(editing: Bool, animated: Bool) {
+        if (editing) {
+
+        } else {
+
+        }
+        editButtonPressed(self)
     }
 
 }

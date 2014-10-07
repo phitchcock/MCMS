@@ -85,13 +85,7 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="qaf-dV-KUd">
-                        <barButtonItem key="rightBarButtonItem" title="Edit" id="iS1-e7-JE7">
-                            <connections>
-                                <action selector="editButtonPressed:" destination="Lf4-8M-Fz8" id="gCw-4S-GdR"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="qaf-dV-KUd"/>
                     <connections>
                         <outlet property="creatureNameLabel" destination="SUg-5A-EZM" id="mNw-jn-e3t"/>
                         <outlet property="updateCreateTextField" destination="K6t-iv-f4h" id="ACJ-7f-hxx"/>
