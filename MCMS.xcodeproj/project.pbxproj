@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9DDE1A5E19E4F4B9006680B3 /* Accessorie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9DDE1A5D19E4F4B9006680B3 /* Accessorie.swift */; };
 		D0EB547419E4603D0005DFA9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB547319E4603D0005DFA9 /* AppDelegate.swift */; };
 		D0EB547719E4603D0005DFA9 /* MCMS.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D0EB547519E4603D0005DFA9 /* MCMS.xcdatamodeld */; };
 		D0EB547919E4603D0005DFA9 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB547819E4603D0005DFA9 /* ViewController.swift */; };
@@ -30,6 +31,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9DDE1A5D19E4F4B9006680B3 /* Accessorie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Accessorie.swift; sourceTree = "<group>"; };
 		D0EB546E19E4603D0005DFA9 /* MCMS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCMS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0EB547219E4603D0005DFA9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D0EB547319E4603D0005DFA9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			children = (
 				D0EB549C19E4795D0005DFA9 /* CreatureTableViewCell.swift */,
 				D0EB549819E461770005DFA9 /* MagicalCreature.swift */,
+				9DDE1A5D19E4F4B9006680B3 /* Accessorie.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				D0EB549D19E4795D0005DFA9 /* CreatureTableViewCell.swift in Sources */,
 				D0EB549B19E468B10005DFA9 /* ShowViewController.swift in Sources */,
 				D0EB547919E4603D0005DFA9 /* ViewController.swift in Sources */,
+				9DDE1A5E19E4F4B9006680B3 /* Accessorie.swift in Sources */,
 				D0EB549919E461770005DFA9 /* MagicalCreature.swift in Sources */,
 				D0EB547419E4603D0005DFA9 /* AppDelegate.swift in Sources */,
 				D0EB547719E4603D0005DFA9 /* MCMS.xcdatamodeld in Sources */,

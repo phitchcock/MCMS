@@ -9,14 +9,13 @@
 import UIKit
 import CoreData
 
-class ShowViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class ShowViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     var name:String!
     var detail:String!
     //var image:UIImage!
     var existingCreature:NSManagedObject!
 
-    @IBOutlet weak var creatureNameLabel: UILabel!
     @IBOutlet weak var updateCreateTextField: UITextField!
     @IBOutlet weak var updateCreatureDetail: UITextField!
     @IBOutlet weak var creatureImageView: UIImageView!
@@ -32,7 +31,7 @@ class ShowViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         imagePicker.allowsEditing = false
         imagePicker.sourceType = .PhotoLibrary
         self.presentViewController(imagePicker, animated: true, completion: nil)
-
+        updateCreatureDetail.endEditing(true)
 
         //var newImage = UIImagePNGRepresentation(creatureImageView.image)
 
@@ -45,7 +44,6 @@ class ShowViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         }
     }
 
-    
     @IBAction func editButtonPressed(sender: AnyObject) {
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext!
@@ -55,7 +53,7 @@ class ShowViewController: UIViewController, UIImagePickerControllerDelegate, UIN
             var newImage = UIImagePNGRepresentation(creatureImageView.image)
             //existingCreature.setValue(newImage as NSData, forKey: "image")
             
-            creatureNameLabel.text = "Creature name is \(name) and it's details are \(detail)"
+            //creatureNameLabel.text = "Creature name is \(name) and it's details are \(detail)"
             
             context.save(nil)
 
@@ -66,7 +64,9 @@ class ShowViewController: UIViewController, UIImagePickerControllerDelegate, UIN
     override func viewDidLoad() {
         super.viewDidLoad()
         //self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        creatureNameLabel.text = "Creature name is \(name) and it's details are \(detail)"
+        updateCreateTextField.text = name
+        updateCreatureDetail.text = detail
+        //creatureNameLabel.text = "Creature name is \(name) and it's details are \(detail)"
         println(detail)
         //creatureImageView.image = UIImage(named: "Icon-60.png")
     }
@@ -75,7 +75,23 @@ class ShowViewController: UIViewController, UIImagePickerControllerDelegate, UIN
         super.didReceiveMemoryWarning()
     }
     override func viewDidAppear(animated: Bool) {
-        creatureNameLabel.text = "Creature name is \(name) and it's details are \(detail)"
+        //creatureNameLabel.text = "Creature name is \(name) and it's details are \(detail)"
+    }
+
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
+
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        var cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("cCell") as UITableViewCell
+
+        cell.textLabel?.text = "Accessories"
+
+        return cell
+    }
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 
 /*

@@ -11,9 +11,9 @@ import CoreData
 
 class MagicalCreature: NSManagedObject {
 
-    @NSManaged var name:String
-    @NSManaged var detail:String
-    @NSManaged var image:NSData
-
+    @NSManaged var name: String
+    @NSManaged var detail: String
+    @NSManaged var image: NSData
+    @NSManaged var accessories: NSSet
 
 }

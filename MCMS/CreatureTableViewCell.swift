@@ -13,7 +13,6 @@ class CreatureTableViewCell: UITableViewCell {
     @IBOutlet weak var creatureNameLabel: UILabel!
     @IBOutlet weak var creatureDetailLabel: UILabel!
     @IBOutlet weak var creatureImage: UIImageView!
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

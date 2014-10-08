@@ -9,14 +9,14 @@
 import UIKit
 import CoreData
 
-class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class ViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate {
 
     var creatures: [AnyObject] = []
+    //var accessories: [AnyObject] = []
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var creatureTextField: UITextField!
     @IBOutlet weak var detailTextField: UITextField!
-
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +30,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         getData()
     }
 
-
     @IBAction func addCreatureButtonPressed(sender: AnyObject) {
         setData()
         getData()
+        detailTextField.endEditing(true)
         creatureTextField.text = ""
         detailTextField.text = ""
     }
@@ -44,10 +44,15 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell: CreatureTableViewCell = tableView.dequeueReusableCellWithIdentifier("dCell", forIndexPath: indexPath) as CreatureTableViewCell
         var data: NSManagedObject = creatures[indexPath.row] as NSManagedObject
+        //var dataAccessory: NSManagedObject = accessories[indexPath.row] as NSManagedObject
+
         var name = data.valueForKey("name") as? String
         var detail = data.valueForKey("detail") as? String
+        //var accessory = dataAccessory.valueForKey("kind") as? String
+
         cell.creatureNameLabel.text = data.valueForKey("name") as? String
         cell.creatureDetailLabel.text = data.valueForKey("detail") as? String
+        //cell.creatureAccessoryLabel.text = accessory
         //cell.creatureImage.image = UIImage(data: )
         return cell
 
@@ -71,11 +76,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
         let appDelegate: AppDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let context: NSManagedObjectContext = appDelegate.managedObjectContext!
         let entityList = NSEntityDescription.entityForName("MagicalCreature", inManagedObjectContext: context)
+        //let entityAccessory = NSEntityDescription.entityForName("Accessorie", inManagedObjectContext: context)
         var newCreature = MagicalCreature(entity: entityList!, insertIntoManagedObjectContext: context)
+        //var newCreatureAccessory = Accessorie(entity: entityAccessory!, insertIntoManagedObjectContext: context)
         newCreature.name = creatureTextField.text
         newCreature.detail = detailTextField.text
+        //newCreature.setValue(newCreatureAccessory, forKeyPath: "Accessorie")
+        //var changeData:NSData = accessoriesTextField.text as NSData
+        //newCreature.accessories.append(changeData)
         var e: NSError?
         context.save(&e)
+        //print("\(newCreatureAccessory)")
     }
 
     func getData() {
@@ -98,6 +109,10 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
             showVC.existingCreature = selectedItem
             println("\(showVC.existingCreature)")
         }
+    }
+
+    override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        self.view.endEditing(true)
     }
 }
 

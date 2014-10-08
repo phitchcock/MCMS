@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6244" systemVersion="14A379a" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Accessorie" representedClassName="Accessories" syncable="YES">
+        <attribute name="kind" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="magicalCreatures" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="MagicalCreature" inverseName="accessories" inverseEntity="MagicalCreature" syncable="YES"/>
+    </entity>
     <entity name="MagicalCreature" representedClassName="MagicalCreature" syncable="YES">
         <attribute name="detail" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="image" optional="YES" attributeType="Binary" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="accessories" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Accessorie" inverseName="magicalCreatures" inverseEntity="Accessorie" syncable="YES"/>
     </entity>
     <elements>
-        <element name="MagicalCreature" positionX="-63" positionY="-18" width="128" height="88"/>
+        <element name="Accessorie" positionX="178" positionY="-90" width="128" height="73"/>
+        <element name="MagicalCreature" positionX="-135" positionY="-252" width="128" height="103"/>
     </elements>
 </model>
