@@ -17,35 +17,38 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
     @IBOutlet weak var creatureTextField: UITextField!
     @IBOutlet weak var detailTextField: UITextField!
 
-    @IBAction func addCreatureButton(sender: AnyObject) {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+    }
+
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+    }
+
+    override func viewWillAppear(animated: Bool) {
+        getData()
+    }
+
+
+    @IBAction func addCreatureButtonPressed(sender: AnyObject) {
         setData()
         getData()
         creatureTextField.text = ""
         detailTextField.text = ""
     }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return creatures.count
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell: UITableViewCell = tableView.dequeueReusableCellWithIdentifier("dCell", forIndexPath: indexPath) as UITableViewCell
+        let cell: CreatureTableViewCell = tableView.dequeueReusableCellWithIdentifier("dCell", forIndexPath: indexPath) as CreatureTableViewCell
         var data: NSManagedObject = creatures[indexPath.row] as NSManagedObject
-        var name = data.valueForKey("name") as String
-        var detail = data.valueForKey("detail") as String
-        cell.textLabel?.text = data.valueForKey("name") as? String
-        cell.detailTextLabel?.text = data.valueForKey("detail") as? String
+        var name = data.valueForKey("name") as? String
+        var detail = data.valueForKey("detail") as? String
+        cell.creatureNameLabel.text = data.valueForKey("name") as? String
+        cell.creatureDetailLabel.text = data.valueForKey("detail") as? String
+        //cell.creatureImage.image = UIImage(data: )
         return cell
 
     }
@@ -84,20 +87,17 @@ class ViewController: UIViewController, UITableViewDataSource, UITableViewDelega
 
     }
 
-    override func viewWillAppear(animated: Bool) {
-        getData()
-    }
-
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         var showVC = segue.destinationViewController as ShowViewController
         if (segue.identifier == "show") {
             var selectedItem: NSManagedObject = creatures[self.tableView.indexPathForSelectedRow()!.row] as NSManagedObject
             showVC.name = selectedItem.valueForKey("name") as String
             showVC.detail = selectedItem.valueForKey("detail") as String
+            //showVC.image = selectedItem.valueForKey("image") as? UIImage
+            showVC.title = showVC.name
             showVC.existingCreature = selectedItem
+            println("\(showVC.existingCreature)")
         }
     }
-
-
 }
 

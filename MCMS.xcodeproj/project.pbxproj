@@ -16,6 +16,7 @@
 		D0EB548D19E4603D0005DFA9 /* MCMSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB548C19E4603D0005DFA9 /* MCMSTests.swift */; };
 		D0EB549919E461770005DFA9 /* MagicalCreature.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB549819E461770005DFA9 /* MagicalCreature.swift */; };
 		D0EB549B19E468B10005DFA9 /* ShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB549A19E468B10005DFA9 /* ShowViewController.swift */; };
+		D0EB549D19E4795D0005DFA9 /* CreatureTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0EB549C19E4795D0005DFA9 /* CreatureTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 		D0EB548C19E4603D0005DFA9 /* MCMSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MCMSTests.swift; sourceTree = "<group>"; };
 		D0EB549819E461770005DFA9 /* MagicalCreature.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MagicalCreature.swift; sourceTree = "<group>"; };
 		D0EB549A19E468B10005DFA9 /* ShowViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowViewController.swift; sourceTree = "<group>"; };
+		D0EB549C19E4795D0005DFA9 /* CreatureTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreatureTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,13 +86,11 @@
 			isa = PBXGroup;
 			children = (
 				D0EB547319E4603D0005DFA9 /* AppDelegate.swift */,
-				D0EB547819E4603D0005DFA9 /* ViewController.swift */,
-				D0EB547A19E4603D0005DFA9 /* Main.storyboard */,
-				D0EB549A19E468B10005DFA9 /* ShowViewController.swift */,
+				D0EB549F19E4797C0005DFA9 /* Controllers */,
+				D0EB54A019E4798A0005DFA9 /* Views */,
+				D0EB549E19E479690005DFA9 /* Models */,
 				D0EB547D19E4603D0005DFA9 /* Images.xcassets */,
-				D0EB547F19E4603D0005DFA9 /* LaunchScreen.xib */,
 				D0EB547519E4603D0005DFA9 /* MCMS.xcdatamodeld */,
-				D0EB549819E461770005DFA9 /* MagicalCreature.swift */,
 				D0EB547119E4603D0005DFA9 /* Supporting Files */,
 			);
 			path = MCMS;
@@ -119,6 +119,33 @@
 				D0EB548B19E4603D0005DFA9 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0EB549E19E479690005DFA9 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D0EB549C19E4795D0005DFA9 /* CreatureTableViewCell.swift */,
+				D0EB549819E461770005DFA9 /* MagicalCreature.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D0EB549F19E4797C0005DFA9 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D0EB547819E4603D0005DFA9 /* ViewController.swift */,
+				D0EB549A19E468B10005DFA9 /* ShowViewController.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
+		D0EB54A019E4798A0005DFA9 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D0EB547A19E4603D0005DFA9 /* Main.storyboard */,
+				D0EB547F19E4603D0005DFA9 /* LaunchScreen.xib */,
+			);
+			name = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,6 +248,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0EB549D19E4795D0005DFA9 /* CreatureTableViewCell.swift in Sources */,
 				D0EB549B19E468B10005DFA9 /* ShowViewController.swift in Sources */,
 				D0EB547919E4603D0005DFA9 /* ViewController.swift in Sources */,
 				D0EB549919E461770005DFA9 /* MagicalCreature.swift in Sources */,
@@ -417,6 +445,7 @@
 				D0EB549219E4603D0005DFA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0EB549319E4603D0005DFA9 /* Build configuration list for PBXNativeTarget "MCMSTests" */ = {
 			isa = XCConfigurationList;
@@ -425,6 +454,7 @@
 				D0EB549519E4603D0005DFA9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
